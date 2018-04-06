@@ -9,6 +9,34 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="main-container" class="container">
+      <div class="row">
+        <nav id="sidebar" class="col-xs-3">
+          <%=image_tag "profilePicture.jpg",:style =>"width:100%;"%>
+          <ul class="list-group">
+            <!--Should probably come up with some clever code here to automaticly select which side bar item is currently selected ...-->
+            <li class="list-group-item">
+              <%=link_to do%>
+              Home
+              <%end%>
+            </li>
+            <li class="list-group-item">
+              <%=link_to "https://github.com/rigel-eva" do%>
+              GitHub
+              <%end%>
+            </li>
+            <li class="list-group-item">
+              <%=link_to "https://rigel.moe" do%>
+              Blogosphere
+              <%end%>
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+          </ul>
+        </nav>
+        <div class="col-xs-9">
+          <%=yield%>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
