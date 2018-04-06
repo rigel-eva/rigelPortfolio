@@ -1,0 +1,10 @@
+<h1>Wordpress Example Integration</h1>
+<br>
+<br>
+<%@wordpressPosts.each{|post|%>
+<%=link_to post[:URL] do%>
+    <h3><%=post[:title]%></h3>
+<%end%>
+<div><%=post[:content]%></div>
+<%}%>
+

@@ -12,13 +12,11 @@
     <div id="main-container" class="container">
       <div class="row">
         <nav id="sidebar" class="col-xs-3">
-          <%=image_tag "profilePicture.jpg",:style =>"width:100%;"%>
+          <%=image_tag "https://www.gravatar.com/avatar/116971880f7b77a795f8134444d8845a?size=1024",:style =>"width:100%;"%>
           <ul class="list-group">
             <!--Should probably come up with some clever code here to automaticly select which side bar item is currently selected ...-->
             <li class="list-group-item">
-              <%=link_to do%>
-              Home
-              <%end%>
+              <%=link_to "Home",root_path%>
             </li>
             <li class="list-group-item">
               <%=link_to "https://github.com/rigel-eva" do%>
@@ -26,9 +24,7 @@
               <%end%>
             </li>
             <li class="list-group-item">
-              <%=link_to "https://rigel.moe" do%>
-              Blogosphere
-              <%end%>
+              <%=link_to "Blogosphere","https://rigel.moe"%>
               <span class="badge badge-primary badge-pill">14</span>
             </li>
           </ul>
