@@ -2,9 +2,9 @@
 <br>
 <br>
 <%@wordpressPosts.each{|post|%>
-<%=link_to post[:URL] do%>
-    <h3><%=post[:title]%></h3>
+<%=link_to post["URL"] do%>
+    <h3><%=post["title"].html_safe%></h3>
 <%end%>
-<div><%=post[:content]%></div>
+<div><%=post["excerpt"].html_safe%></div>
 <%}%>
 
