@@ -2,9 +2,20 @@
 <br>
 <br>
 <%@wordpressPosts.each{|post|%>
-<%=link_to post["URL"] do%>
-    <h3><%=post["title"].html_safe%></h3>
-<%end%>
-<div><%=post["excerpt"].html_safe%></div>
+    <div class=row>
+        <h3>
+        <%=link_to post["URL"] do%>
+            <div class="col-xs-8">
+            <%=post["title"].html_safe%>
+        </div>
+        <div class="col-xs-2">
+            <h4><%=post["date"]%></h4>
+        </div>
+        <%end%>
+        </h3>
+    </div>
+    <div class=row>
+        <div class="col-xs-10"><%=post["excerpt"].html_safe%></div>
+    </div>
 <%}%>
 

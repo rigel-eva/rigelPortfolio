@@ -13,6 +13,13 @@
                     "ssh -t hestia.yoitsu.rigel.moe \"cd /home/rigel/Documents/Programing/Rails/rigelPortfolio; rails s -b 0.0.0.0 -p 6969\""   
                 ]
             },
+            "osx": {
+                "command": "/usr/bin/ssh",
+                "args": [
+                    "hestia.yoitsu.rigel.moe ",
+                    "'cd /home/rigel/Documents/Programing/Rails/rigelPortfolio; rails s -b 0.0.0.0 -p 6969'"
+                ]
+            },
             "problemMatcher":[]
         },
         {
@@ -23,18 +30,6 @@
                 "hestia.yoitsu.rigel.moe:6969"
             ] ,
             "problemMatcher": []//Repressing asking for a problem matcher ;p
-        },
-        {
-            "label": "Fetch Gems",
-            "type": "process",
-            "windows": {
-                "command": "C:\\Users\\rigel\\AppData\\Local\\Microsoft\\WindowsApps\\ubuntu.exe",
-                "args":[
-                    "run",
-                    "ssh -t hestia.yoitsu.rigel.moe \"cd /home/rigel/Documents/Programing/Rails/rigelPortfolio; bundle install --path vendor/bundle\""   
-                ]
-            },
-            "problemMatcher": []
         }
     ]
 }

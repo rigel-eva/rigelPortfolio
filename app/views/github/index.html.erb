@@ -1,0 +1,11 @@
+<h1>Github#index</h1>
+<p>Find me in app/views/github/index.html.erb</p>
+<%@projects.each{|project|%>
+    <div class="card rigel-card" style="width: 18rem;">
+        <div class="card-header"><%=project["name"]%></div>
+        <div class="card-body">
+            <h6>Language: <span style="float: right;"><%=project["language"]%></span></h6>
+            <%=project["description"]%>
+        </div>
+    </div>
+<%}%>
