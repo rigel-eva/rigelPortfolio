@@ -31,14 +31,7 @@
         <div class="col-xs-3"></div>
       </div>
       <div class="row">
-        <nav id="sidebar" class="col-xs-3">
-          <%=image_tag "https://www.gravatar.com/avatar/116971880f7b77a795f8134444d8845a?size=1024",:style =>"width:100%;"%>
-          <ul class="list-group">
-            <!--Should probably come up with some clever code here to automaticly select which side bar item is currently selected ...-->
-            
-          </ul>
-        </nav>
-        <div class="col-xs-9">
+        <div id="content" class="col-xs-12">
           <%=yield%>
         </div>
       </div>

@@ -22,6 +22,18 @@
     -ms-border-radius: $radius;
     border-radius: $radius;
 }
+
+body{
+    background-image:image-url("forest-background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#content{
+    background-color:rgba(253, 253, 253, 0.658);
+}
 .rigel-card {
     border: 4px solid #000000;
     @include border-radius(5px);
@@ -38,6 +50,7 @@
     background-image: image-url("wood_grain.png");
     background-size: 40px;
     background-repeat: repeat;
+    align-content: center;
     .list-group-item{
         font-family: "hydrophilia-iced";
         border:8px solid orange;
