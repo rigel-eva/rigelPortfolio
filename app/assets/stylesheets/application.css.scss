@@ -30,18 +30,25 @@
     font-family:"hydrophilia-iced";
 }
 #header_nav{
+    border-image-source: image-url("button_border.png");
+    border-image-slice: 50;
+    border-image-repeat: stretch;
+    border-image-outset: 2%;
+    border-radius: 18px;
+    background-image: image-url("wood_grain.png");
+    background-size: 40px;
+    background-repeat: repeat;
     .list-group-item{
         font-family: "hydrophilia-iced";
         border:8px solid orange;
         border-image-source: image-url("button_border.png");
-        border-image-slice: 34;
+        border-image-slice: 50;
         border-image-repeat: stretch;
         border-image-outset: 2%;
-        background-image: image-url("wood_grain.png");
-        background-size: 40px;
-        background-repeat: repeat;
-        background-clip:padding-box;
+        border-radius: 18px;
+        background: rgba(0,0,0,0.3);
         padding: 2%;
+        margin: 2%;
         a{
             color:#cf9b4b;
             font-size: 1.5em;
