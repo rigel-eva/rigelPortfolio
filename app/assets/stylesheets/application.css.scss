@@ -22,37 +22,86 @@
     -ms-border-radius: $radius;
     border-radius: $radius;
 }
-
+@mixin col-centered(){
+    float: none;
+    margin: 0 auto;
+}
+@mixin paddingBox($others,$bottom){
+    padding:$others $others $bottom $others;
+}
 body{
     background-image:image-url("forest-background.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    font-family: "hydrophilia-iced";
 }
-#content{
-    background-color:rgba(253, 253, 253, 0.658);
+/*#content{
+    background-color:rgba(253, 253, 253, 0.858);
+    padding:10px;
+}*/
+#blog{
+    border:14px solid orangered;
+    border-image-source: image-url("blog_border.png");
+    border-image-slice:40;
+    border-image-repeat: repeat;
+    border-image-outset: 3%;
+    background-color:#fffeef;
+    background-clip: padding-box;
+    overflow: hidden;
+    padding:5px;
+    .h1{
+        font-size: 3em;
+    }
+}
+#github{
+    border:8px solid orchid;
+    border-image:image-url("github_border.png");
+    border-image-slice:100;
+    border-image-width: 32px 32px;
+    border-image-repeat: repeat;
+    padding:60px;
+    background-color:#c1bfcf;
+    background-clip:padding-box;
+}
+#resume{
+    border:8px solid goldenrod;
+    border-image:image-url("Resume_border.png");
+    border-image-slice:100;
+    border-image-width: 32px 32px;
+    border-image-repeat: repeat;
+    background-color:#ffffff;
+    @include paddingBox(20px,40px);
+    background-clip:padding-box;
 }
 .rigel-card {
     border: 4px solid #000000;
     @include border-radius(5px);
 }
-.list-group-item{
-    font-family:"hydrophilia-iced";
+#fancyTitle{
+    @extend .col-md-12;
+    text-align: center;
+    color:#d8e8f7;
 }
 #header_nav{
-    border-image-source: image-url("button_border.png");
-    border-image-slice: 50;
-    border-image-repeat: stretch;
+    @extend .col-md-8;
+    //@extend .container;
+    @include border-radius(10px);
+    border:18px solid orange;
+    border-image-source: image-url("header_border.png");
+    border-image-slice: 70;
+    border-image-repeat: repeat;
     border-image-outset: 2%;
     border-radius: 18px;
     background-image: image-url("wood_grain.png");
     background-size: 40px;
     background-repeat: repeat;
-    align-content: center;
-    .list-group-item{
-        font-family: "hydrophilia-iced";
+    align-items: center;
+    margin:10px;
+    .headerButton{
+        @extend .col-md-4;
+        //@extend .p-3;
         border:8px solid orange;
         border-image-source: image-url("button_border.png");
         border-image-slice: 50;
@@ -60,8 +109,7 @@ body{
         border-image-outset: 2%;
         border-radius: 18px;
         background: rgba(0,0,0,0.3);
-        padding: 2%;
-        margin: 2%;
+        text-align: center;
         a{
             color:#cf9b4b;
             font-size: 1.5em;

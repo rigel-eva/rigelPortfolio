@@ -11,24 +11,28 @@
   <body>
     <div id="main-container" class="container">
       <div class="row">
-        <div class="col-xs-3"></div>
-        <nav id="header_nav" class="col-xs-6">
-          <ul class="nav-pills">
-            <li class="list-group-item">
-              <%=link_to "Home",root_path%>
-            </li>
-            <li class="list-group-item">
-              <%=link_to "https://github.com/rigel-eva" do%>
-              GitHub
-              <%end%>
-            </li>
-            <li class="list-group-item">
-              <%=link_to "Blogosphere",controller:"wordpress_preview",action:"index"%>
-              <span class="badge badge-primary badge-pill"><%= @wordpressPosts=JSON.parse(RestClient.get(URI::encode("https://public-api.wordpress.com/rest/v1.1/sites/rigelmoe.wordpress.com/posts"),:content_type => :json, :accept => :json))["found"]%></span>
-            </li>
-          </ul>
+        <div class="col-sm-2"></div>
+        <nav id="header_nav">
+          <div class="row">
+            <div id="fancyTitle">
+              <h1>Nora Maguire</h1>
+              <h4>DevOps, Programmer</h5>
+            </div>
+          </div>
+          <div class="row" style="padding:10px;">
+              <div class="headerButton">
+                <%=link_to "Home",root_path%>
+              </div>
+              <div class="headerButton">
+                <%=link_to "Github",controller:"github",action:"index"%>
+              </div>
+              <div class="headerButton">
+                <%=link_to "Wordpress",controller:"wordpress_preview",action:"index"%>
+
+              </div>
+            </div>
         </nav>
-        <div class="col-xs-3"></div>
+        <div class="col-sm-2"></div>
       </div>
       <div class="row">
         <div id="content" class="col-xs-12">
