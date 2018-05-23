@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :skill_groups
+  resources :skills
   #get 'github/index'
 
   root 'landing_page#welcome'

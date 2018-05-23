@@ -1,5 +1,5 @@
 class LandingPageController < ApplicationController
-  def welcome 
-    @boop="hOI!!!!! i'm tEMMIE!!!!"
+  def welcome
+    @skillGroups=SkillGroup.all;
   end
 end

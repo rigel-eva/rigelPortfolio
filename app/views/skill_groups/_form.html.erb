@@ -1,0 +1,20 @@
+<%= form_with(model: skill_group, local: true) do |form| %>
+  <% if skill_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skill_group.errors.count, "error") %> prohibited this skill_group from being saved:</h2>
+
+      <ul>
+      <% skill_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :skillType %>
+    <%= form.text_field :skillType, id: :skill_group_skillType %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
