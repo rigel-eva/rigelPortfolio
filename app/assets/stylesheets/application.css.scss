@@ -75,10 +75,20 @@ body{
     @include paddingBox(20px,40px);
     background-clip:padding-box;
 }
+#resources{
+    border:18px solid red;
+    border-image:image-url("resources_border.png");
+    border-image-slice:33%;
+    border-image-repeat: repeat;
+    background-color:#99e550;
+    @include paddingBox(20px,40px);
+    background-clip:padding-box;
+}
 .rigel-card {
     border: 4px solid #000000;
     @include border-radius(5px);
 }
+
 #fancyTitle{
     @extend .col-md-12;
     text-align: center;
@@ -100,7 +110,7 @@ body{
     align-items: center;
     margin:10px;
     .headerButton{
-        @extend .col-md-4;
+        @extend .col-md-3;
         //@extend .p-3;
         border:8px solid orange;
         border-image-source: image-url("button_border.png");

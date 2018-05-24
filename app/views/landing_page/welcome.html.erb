@@ -1,29 +1,17 @@
 <div id="resume">
+    <h3>Summary</h3>
+    <hr/>
+    <!--Add Fancy as code here-->
     <h3>Technical Skills</h3>
-    <hr></hr>
-    <!--
-    Should really have some fancy code here to display this stuff ... but for right now ...
-    -->
+    <hr/>
     <%@skillGroups.each do |skillGroup| %>
         <div id="<%=skillGroup.skillType.camelcase%>">
         <b><%=skillGroup.skillType.to_s+": "%></b>
-        <%skillGroup.skills.each do |skill|%>
-            <%=skill.skillName.to_s+" "%>
-        <%end%>
+        <%=skillGroup.skills.map{|skill| skill.skillName}.join(", ")%>
     <%end%>
-    <div id="languages">
-    <b>Languages: </b> Ruby, C#, C++, Objective-C SQL, HTML, CSS, Javascript, PHP, MASM
-    </div>
-    <div id="commandLine">
-    <b>Command Line: </b>Git, Vim, BASH, ZSH
-    </div>
-    <div id="IDEs">
-    <b>IDEs: </b>XCode, Visual Studio 2015/17, Visual Studio code
-    </div>
-    <div id="operatingSystems">
-    <b>Operating Systems: </b>Windows 7/8.1/10, Mac OS 10.6-10.12, Ubuntu 14.04 LTS-16.04 LTS
-    </div>
-    <div id="otherSkills">
-    <b>Other Skills: </b>
-    </div>
+    <h3>Projects</h3>
+    <hr/>
+    <!--Add fancy ass code here-->
+    <h3>Education</h3>
+    <hr/>
 </div>

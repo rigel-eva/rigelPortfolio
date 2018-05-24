@@ -1,16 +1,20 @@
+
 <p id="notice"><%= notice %></p>
-<div style="background:#ffffff">
-<h1>Skill Groups</h1>
-  <% @skill_groups.each do |skill_group| %>
+<div id="resources">
+  <h1>Skill Groups</h1>
     <div class="row">
-      <div class="col-xs-9"><%= skill_group.skillType %></div>
-      <div class="col-xs-1"><%= link_to 'Show', skill_group %></div>
-      <div class="col-xs-1"><%= link_to 'Edit', edit_skill_group_path(skill_group) %></div>
-      <div class="col-xs-1"><%= link_to 'Destroy', skill_group, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      <div class="col-xs-2">Skill Type</div>
     </div>
-  <% end %>
+    <% @skill_groups.each do |skill_group| %>
+      <div class="row">
+        <div class="col-xs-9"><%= skill_group.skillType %></div>
+        <div class="col-xs-1"><%= link_to 'Show', skill_group %></div>
+        <div class="col-xs-1"><%= link_to 'Edit', edit_skill_group_path(skill_group) %></div>
+        <div class="col-xs-1"><%= link_to 'Destroy', skill_group, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+    <% end %>
 
-<br>
+  <br>
 
-<%= link_to 'New Skill Group', new_skill_group_path %>
+  <%= link_to 'New Skill Group', new_skill_group_path %>
 </div>
