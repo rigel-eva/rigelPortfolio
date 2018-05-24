@@ -2,22 +2,25 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Projectname:</strong>
+    <strong>Name:</strong>
     <%= @project.projectName %>
   </p>
-
   <p>
-    <strong>Projectstartdate:</strong>
+    <strong> Client:</strong>
+    <%= @project.client %>
+  </p>
+  <p>
+    <strong>Start Date:</strong>
     <%= @project.projectStartDate %>
   </p>
 
   <p>
-    <strong>Projectenddate:</strong>
+    <strong> End Date:</strong>
     <%= @project.projectEndDate %>
   </p>
 
   <p>
-    <strong>Projectinfo:</strong>
+    <strong>Info:</strong>
     <%= simple_format(@project.projectInfo) %>
   </p>
 

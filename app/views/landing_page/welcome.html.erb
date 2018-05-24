@@ -13,7 +13,7 @@
     <hr/>
     <%@projects.each do |project|%>
     <div class="row">
-    <div class="col-xs-9"><h4><%=project.projectName%></h4></div>
+    <div class="col-xs-9"><h4><%=project.projectName%></h4><h5><%=project.client%></h6></div>
     <div class="col-xs-3"><h5><%=project.projectStartDate.strftime("%Y/%m/%d")+" - "%>
         <%if project.current%>
             Current

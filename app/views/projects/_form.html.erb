@@ -16,7 +16,10 @@
     <%= form.label :projectName %>
     <%= form.text_field :projectName, id: :project_projectName %>
   </div>
-
+  <div class="field">
+   <%= form.label :client%>
+   <%= form.text_field :client, id: :project_client%>
+  </div>
   <div class="field">
     <%= form.label :projectStartDate %>
     <%= form.date_select :projectStartDate, id: :project_projectStartDate %>
