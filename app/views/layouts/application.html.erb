@@ -9,7 +9,7 @@
   </head>
 
   <body id="wrap">
-    <div id="main-container wrap" class="container">
+    <div id="main-container" class="container">
       <div class="row">
         <div class="col-sm-2"></div>
         <nav id="header_nav">
@@ -56,8 +56,27 @@
         HOI!
         </div>
         <div class="col-xs-1">
-          <% if !current_user.nil?%>
-            <%= image_tag current_user.image_url, alt: current_user.name %>
+          <%if !current_user.nil?%>
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="loginButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%=image_tag current_user.image_url, alt: current_user.name %>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <%=link_to 'Log Out', logout_path, method: :delete%>
+            </div>
+          </div>
+
+          <%else%>
+            <div class="btn-group dropup">
+              <button type="button" class="btn btn-secondary dropdown-toggle" id="loginButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%=image_tag "login_glyph.png", padding:"20px"%>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <%= link_to 'Twitter','/auth/twitter'%>
+                <%= link_to 'Google+', '/auth/google' %>
+                <!--Should probably insert some other links ... like github but ¯\_(ツ)_/¯-->
+              </div>
+            </div>
           <%end%>
         </div>
       </div>

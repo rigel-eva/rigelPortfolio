@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/github', to: 'github#index'
   get 'signup', to: 'users#new'
   get '/auth/:provider/callback', to: 'session#create'
+  delete '/logout', to: 'session#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
