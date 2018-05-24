@@ -36,6 +36,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family: "hydrophilia-iced";
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
 }
 /*#content{
     background-color:rgba(253, 253, 253, 0.858);
@@ -125,4 +128,17 @@ body{
             font-size: 1.5em;
         }
     }
+}
+#wrap{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+}
+footer{
+    padding-top:20px;
+    height: 60px;
+    position: relative;
+    bottom: 0;
 }
