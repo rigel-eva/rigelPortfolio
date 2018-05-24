@@ -1,7 +1,11 @@
 <div id="resume">
     <h3>Summary</h3>
     <hr/>
-    <!--Add Fancy as code here-->
+    <%@summaries.each do |summary|%>
+        <%if summary.enabled%>
+            <%= simple_format(summary.summaryText)%>
+        <%end%>
+    <%end%>
     <h3>Technical Skills</h3>
     <hr/>
     <%@skillGroups.each do |skillGroup| %>
@@ -28,7 +32,6 @@
         </div>
     </div>
     <%end%>
-    <!--Add fancy ass code here-->
     <h3>Education</h3>
     <hr/>
 </div>

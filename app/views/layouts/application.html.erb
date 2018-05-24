@@ -62,6 +62,9 @@
               <%=image_tag current_user.image_url, alt: current_user.name %>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
+              <%if can? :manage, Summary%>
+                <%=link_to "Manage Summary","/summaries"%>
+              <%end%>
               <%if can? :manage, Skill%>
                 <%=link_to "Manage Skills","/skills"%>
               <%end%>

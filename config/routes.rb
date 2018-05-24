@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :summaries
   resources :projects
   resources :skill_groups
   resources :skills

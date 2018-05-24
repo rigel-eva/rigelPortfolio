@@ -76,6 +76,9 @@ body{
     background-color:#ffffff;
     @include paddingBox(20px,40px);
     background-clip:padding-box;
+    p{
+        font-family: "hydrophilia-iced";
+    }
 }
 #resources{
     border:18px solid red;

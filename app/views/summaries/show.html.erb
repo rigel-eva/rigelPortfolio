@@ -1,0 +1,16 @@
+<div id="resources">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Summarytext:</strong>
+    <%= @summary.summaryText %>
+  </p>
+
+  <p>
+    <strong>Enabled:</strong>
+    <%= @summary.enabled %>
+  </p>
+
+  <%= link_to 'Edit', edit_summary_path(@summary) %> |
+  <%= link_to 'Back', summaries_path %>
+</div>
