@@ -1,0 +1,40 @@
+
+<%= form_with(model: project, local: true, onload:"nilAndDisableDate()") do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :projectName %>
+    <%= form.text_field :projectName, id: :project_projectName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :projectStartDate %>
+    <%= form.date_select :projectStartDate, id: :project_projectStartDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :projectEndDate %>
+    <%= form.date_select :projectEndDate, id: :project_projectEndDate %>
+    <%= form.label "Current"%>
+    <%= form.check_box :current, id: :project_current%>
+  </div>
+
+  <div class="field">
+    <%= form.label :projectInfo %>
+    <%= form.text_area :projectInfo, id: :project_projectInfo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

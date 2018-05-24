@@ -5,12 +5,29 @@
     <h3>Technical Skills</h3>
     <hr/>
     <%@skillGroups.each do |skillGroup| %>
-        <div id="<%=skillGroup.skillType.camelcase%>">
+        <div id="<%="skillGroup_"+skillGroup.skillType.camelcase%>">
         <b><%=skillGroup.skillType.to_s+": "%></b>
         <%=skillGroup.skills.map{|skill| skill.skillName}.join(", ")%>
     <%end%>
     <h3>Projects</h3>
     <hr/>
+    <%@projects.each do |project|%>
+    <div class="row">
+    <div class="col-xs-9"><h4><%=project.projectName%></h4></div>
+    <div class="col-xs-3"><h5><%=project.projectStartDate.strftime("%Y/%m/%d")+" - "%>
+        <%if project.current%>
+            Current
+        <%else%>
+            <%=project.projectEndDate.strftime("%Y/%m/%d")%>%
+        <%end%>
+    </h5></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <%=simple_format(project.projectInfo)%>
+        </div>
+    </div>
+    <%end%>
     <!--Add fancy ass code here-->
     <h3>Education</h3>
     <hr/>

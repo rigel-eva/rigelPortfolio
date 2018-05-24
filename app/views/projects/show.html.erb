@@ -1,0 +1,26 @@
+<div id="resources">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Projectname:</strong>
+    <%= @project.projectName %>
+  </p>
+
+  <p>
+    <strong>Projectstartdate:</strong>
+    <%= @project.projectStartDate %>
+  </p>
+
+  <p>
+    <strong>Projectenddate:</strong>
+    <%= @project.projectEndDate %>
+  </p>
+
+  <p>
+    <strong>Projectinfo:</strong>
+    <%= simple_format(@project.projectInfo) %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>

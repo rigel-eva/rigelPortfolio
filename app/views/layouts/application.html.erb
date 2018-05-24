@@ -62,6 +62,15 @@
               <%=image_tag current_user.image_url, alt: current_user.name %>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
+              <%if can? :manage, Skill%>
+                <%=link_to "Manage Skills","/skills"%>
+              <%end%>
+              <%if can? :manage, SkillGroup%>
+                <%=link_to "Manage Skill Groups","/skill_groups"%>
+              <%end%>
+              <%if can? :manage, Project%>
+                <%=link_to "Manage Projects","/projects"%>
+              <%end%>
               <%=link_to 'Log Out', logout_path, method: :delete%>
             </div>
           </div>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524032511) do
+ActiveRecord::Schema.define(version: 20180524225457) do
+
+  create_table "projects", force: :cascade do |t|
+    t.string "projectName"
+    t.date "projectStartDate"
+    t.date "projectEndDate"
+    t.text "projectInfo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "current"
+  end
 
   create_table "skill_groups", force: :cascade do |t|
     t.string "skillType"
@@ -36,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180524032511) do
     t.string "location"
     t.string "image_url"
     t.string "url"
+    t.boolean "admin"
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
     t.index ["provider"], name: "index_users_on_provider"
     t.index ["uid"], name: "index_users_on_uid"

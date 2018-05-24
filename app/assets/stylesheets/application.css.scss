@@ -52,7 +52,6 @@ body{
     border-image-outset: 3%;
     background-color:#fffeef;
     background-clip: padding-box;
-    overflow: hidden;
     padding:5px;
     .h1{
         font-size: 3em;
@@ -139,9 +138,11 @@ body{
 footer{
     height: 70px;
     margin: 10px;
+    bottom:0;
     background: #332828;
     color:#ffffff;
     #loginButton{
+        @extend .pull-right;
         border-radius:50%; 
         width:60px;
         height:60px;
