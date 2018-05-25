@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180525000426) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "educations", force: :cascade do |t|
     t.string "name"
     t.date "startDate"
@@ -45,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180525000426) do
     t.string "skillName"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "skill_group_id"
+    t.bigint "skill_group_id"
     t.index ["skill_group_id"], name: "index_skills_on_skill_group_id"
   end
 
