@@ -1,4 +1,5 @@
 class EducationsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_education, only: [:show, :edit, :update, :destroy]
 
   # GET /educations

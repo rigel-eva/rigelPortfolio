@@ -1,4 +1,5 @@
 class SkillGroupsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_skill_group, only: [:show, :edit, :update, :destroy]
 
   # GET /skill_groups

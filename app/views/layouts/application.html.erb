@@ -19,7 +19,7 @@
               <h4>DevOps, Programmer</h4>
             </div>
           </div>
-          <div class="row" style="padding:10px;">
+          <div class="row" style="padding:10px;display:none;">
               <div class="headerButton">
                 <%=link_to "Home",root_path%>
               </div>
@@ -73,6 +73,9 @@
               <%end%>
               <%if can? :manage, Project%>
                 <%=link_to "Manage Projects","/projects"%>
+              <%end%>
+              <%if can? :manage, Education%>
+                <%=link_to "Manage Education","/educations"%>
               <%end%>
               <%=link_to 'Log Out', logout_path, method: :delete%>
             </div>
