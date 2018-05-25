@@ -1,0 +1,47 @@
+<%= form_with(model: education, local: true) do |form| %>
+  <% if education.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(education.errors.count, "error") %> prohibited this education from being saved:</h2>
+
+      <ul>
+      <% education.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :education_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startDate %>
+    <%= form.date_select :startDate, id: :education_startDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endDate %>
+    <%= form.date_select :endDate, id: :education_endDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :incomplete %>
+    <%= form.check_box :incomplete, id: :education_incomplete %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enabled %>
+    <%= form.check_box :enabled, id: :education_enabled %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paperEarned %>
+    <%= form.text_field :paperEarned, id: :education_paperEarned %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

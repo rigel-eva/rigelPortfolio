@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524232314) do
+ActiveRecord::Schema.define(version: 20180525000426) do
+
+  create_table "educations", force: :cascade do |t|
+    t.string "name"
+    t.date "startDate"
+    t.date "endDate"
+    t.boolean "incomplete"
+    t.boolean "enabled"
+    t.string "paperEarned"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "projectName"

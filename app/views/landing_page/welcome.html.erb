@@ -18,7 +18,7 @@
     <%@projects.each do |project|%>
     <div class="row">
     <div class="col-xs-9"><h4><%=project.projectName%></h4><h5><%=project.client%></h6></div>
-    <div class="col-xs-3"><h5><%=project.projectStartDate.strftime("%Y/%m/%d")+" - "%>
+    <div class="col-xs-3"><h5><%=project.projectStartDate.strftime("%Y/%m")+" - "%>
         <%if project.current%>
             Current
         <%else%>
@@ -34,4 +34,24 @@
     <%end%>
     <h3>Education</h3>
     <hr/>
+        <%@educations.each do |education|%>
+            <%if education.enabled%>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <h4><%=education.name%><h4>
+                    </div>
+                    <div class="col xs-3">
+                        <h5>
+                        <%=education.startDate.strftime("%Y/%m")+" - "+education.endDate.strftime("%Y/%m")%>
+                        <%if education.incomplete%>
+                            (incomplete)
+                        <%end%>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><%=education.paperEarned%></div>
+                </div>
+            <%end%>
+        <%end%>
 </div>
