@@ -115,7 +115,9 @@ body{
     background-repeat: repeat;
     align-items: center;
     margin:10px;
-    .headerButton{
+    a{
+        color:#cf9b4b;
+        font-size: 1.5em;
         @extend .col-md-3 ;
         @extend .btn;
         //@extend .p-3;
@@ -127,10 +129,6 @@ body{
         border-radius: 18px;
         background: rgba(0,0,0,0.3);
         text-align: center;
-        a{
-            color:#cf9b4b;
-            font-size: 1.5em;
-        }
     }
 }
 #wrap{
