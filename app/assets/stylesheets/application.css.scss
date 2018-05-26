@@ -116,7 +116,8 @@ body{
     align-items: center;
     margin:10px;
     .headerButton{
-        @extend .col-md-3;
+        @extend .col-md-3 ;
+        @extend .btn;
         //@extend .p-3;
         border:8px solid orange;
         border-image-source: image-url("button_border.png");

@@ -7,11 +7,11 @@
             <h3>
             <%=link_to post["URL"] do%>
                 <div class="col-xs-10">
-                <%=post["title"].html_safe%>
-            </div>
-            <div class="col-xs-2">
-                <h4><%=post["date"].to_date.strftime("%Y/%m/%d")%></h4>
-            </div>
+                    <%=post["title"].html_safe%>
+                </div>
+                <div class="col-xs-2">
+                    <h4><%=post["date"].to_date.strftime("%Y/%m/%d")%></h4>
+                </div>
             <%end%>
             </h3>
         </div>
