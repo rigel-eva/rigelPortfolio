@@ -42,6 +42,7 @@ gem 'omniauth-twitter'
 gem 'cancancan', '~>2.0'
 group :production do
   gem 'lograge'
+  gem 'logstash-event'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
