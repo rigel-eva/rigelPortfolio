@@ -6,3 +6,4 @@ COPY Gemfile /rigelPortfolio/Gemfile
 COPY Gemfile.lock /rigelPortfolio/Gemfile.lock
 RUN bundle install
 COPY . /rigelPortfolio
+RUN RAILS_ENV=production rails assets:precompile
