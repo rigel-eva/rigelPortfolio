@@ -4,12 +4,31 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-  web:
-    build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  app:
+    build: 
+      context: .
+      dockerfile: docker/app/Dockerfile
+    command: ./start_server.sh
+    environment: 
+      - DATABASE_HOST=db
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=
+      - RAILS_LOG_TO_STDOUT=Y
+      - TWITTER_KEY
+      - TWITTER_SECRET
+      - GOOGLE_CLIENT_ID
+      - GOOGLE_CLIENT_SECRET
     volumes:
       - .:/rigelPortfolio
-    ports:
-      - "3000:3000"
     depends_on:
       - db
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    volumes:
+      - ./public:/var/www/rigel_portfolio/public
+    ports: 
+      - 80:80
+    depends_on: 
+      - app

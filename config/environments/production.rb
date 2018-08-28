@@ -88,5 +88,4 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.lograge.enabled = true
-  config.lograge.formatter = Lograge::Formatters::Logstash.new
 end

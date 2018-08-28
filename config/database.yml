@@ -17,9 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV['RIGELPORTFOLIO_HOST']%>
-  username: postgres
-  password: <%= ENV['RIGELPORTFOLIO_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST']%>
+  username: <%= ENV['DATABASE_USER']%>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling

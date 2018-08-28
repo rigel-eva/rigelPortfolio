@@ -23,3 +23,6 @@
 .byebug_history
 /vendor/bundle
 loadKeys.sh
+
+/public/assets/*
+ready
