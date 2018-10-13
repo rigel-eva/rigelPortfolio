@@ -1,6 +1,6 @@
 class SkillGroupsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_skill_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_skill_group, only: %i[show edit update destroy]
 
   # GET /skill_groups
   # GET /skill_groups.json
@@ -10,8 +10,7 @@ class SkillGroupsController < ApplicationController
 
   # GET /skill_groups/1
   # GET /skill_groups/1.json
-  def show
-  end
+  def show; end
 
   # GET /skill_groups/new
   def new
@@ -19,8 +18,7 @@ class SkillGroupsController < ApplicationController
   end
 
   # GET /skill_groups/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /skill_groups
   # POST /skill_groups.json
@@ -64,13 +62,14 @@ class SkillGroupsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_skill_group
-      @skill_group = SkillGroup.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def skill_group_params
-      params.require(:skill_group).permit(:skillType)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_skill_group
+    @skill_group = SkillGroup.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def skill_group_params
+    params.require(:skill_group).permit(:skillType)
+  end
 end

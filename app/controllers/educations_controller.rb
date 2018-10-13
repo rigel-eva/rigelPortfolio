@@ -1,6 +1,6 @@
 class EducationsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_education, only: [:show, :edit, :update, :destroy]
+  before_action :set_education, only: %i[show edit update destroy]
 
   # GET /educations
   # GET /educations.json
@@ -10,8 +10,7 @@ class EducationsController < ApplicationController
 
   # GET /educations/1
   # GET /educations/1.json
-  def show
-  end
+  def show; end
 
   # GET /educations/new
   def new
@@ -19,8 +18,7 @@ class EducationsController < ApplicationController
   end
 
   # GET /educations/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /educations
   # POST /educations.json
@@ -63,13 +61,14 @@ class EducationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_education
-      @education = Education.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def education_params
-      params.require(:education).permit(:name, :startDate, :endDate, :incomplete, :enabled, :paperEarned)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_education
+    @education = Education.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def education_params
+    params.require(:education).permit(:name, :startDate, :endDate, :incomplete, :enabled, :paperEarned)
+  end
 end

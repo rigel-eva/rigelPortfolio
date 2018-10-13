@@ -1,1 +1,1 @@
-json.partial! "summaries/summary", summary: @summary
+json.partial! 'summaries/summary', summary: @summary

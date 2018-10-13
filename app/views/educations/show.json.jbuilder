@@ -1,1 +1,1 @@
-json.partial! "educations/education", education: @education
+json.partial! 'educations/education', education: @education

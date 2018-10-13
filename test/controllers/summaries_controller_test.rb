@@ -5,17 +5,17 @@ class SummariesControllerTest < ActionDispatch::IntegrationTest
     @summary = summaries(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get summaries_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_summary_url
     assert_response :success
   end
 
-  test "should create summary" do
+  test 'should create summary' do
     assert_difference('Summary.count') do
       post summaries_url, params: { summary: { enabled: @summary.enabled, summaryText: @summary.summaryText } }
     end
@@ -23,22 +23,22 @@ class SummariesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to summary_url(Summary.last)
   end
 
-  test "should show summary" do
+  test 'should show summary' do
     get summary_url(@summary)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_summary_url(@summary)
     assert_response :success
   end
 
-  test "should update summary" do
+  test 'should update summary' do
     patch summary_url(@summary), params: { summary: { enabled: @summary.enabled, summaryText: @summary.summaryText } }
     assert_redirected_to summary_url(@summary)
   end
 
-  test "should destroy summary" do
+  test 'should destroy summary' do
     assert_difference('Summary.count', -1) do
       delete summary_url(@summary)
     end

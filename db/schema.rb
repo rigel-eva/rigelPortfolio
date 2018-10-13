@@ -10,68 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180525000426) do
-
+ActiveRecord::Schema.define(version: 20_180_525_000_426) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "educations", force: :cascade do |t|
-    t.string "name"
-    t.date "startDate"
-    t.date "endDate"
-    t.boolean "incomplete"
-    t.boolean "enabled"
-    t.string "paperEarned"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'educations', force: :cascade do |t|
+    t.string 'name'
+    t.date 'startDate'
+    t.date 'endDate'
+    t.boolean 'incomplete'
+    t.boolean 'enabled'
+    t.string 'paperEarned'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "projectName"
-    t.date "projectStartDate"
-    t.date "projectEndDate"
-    t.text "projectInfo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "current"
-    t.string "client"
+  create_table 'projects', force: :cascade do |t|
+    t.string 'projectName'
+    t.date 'projectStartDate'
+    t.date 'projectEndDate'
+    t.text 'projectInfo'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.boolean 'current'
+    t.string 'client'
   end
 
-  create_table "skill_groups", force: :cascade do |t|
-    t.string "skillType"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["skillType"], name: "index_skill_groups_on_skillType"
+  create_table 'skill_groups', force: :cascade do |t|
+    t.string 'skillType'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['skillType'], name: 'index_skill_groups_on_skillType'
   end
 
-  create_table "skills", force: :cascade do |t|
-    t.string "skillName"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "skill_group_id"
-    t.index ["skill_group_id"], name: "index_skills_on_skill_group_id"
+  create_table 'skills', force: :cascade do |t|
+    t.string 'skillName'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'skill_group_id'
+    t.index ['skill_group_id'], name: 'index_skills_on_skill_group_id'
   end
 
-  create_table "summaries", force: :cascade do |t|
-    t.string "summaryText"
-    t.boolean "enabled"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'summaries', force: :cascade do |t|
+    t.string 'summaryText'
+    t.boolean 'enabled'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "provider", default: "NO", null: false
-    t.string "uid", default: "NO", null: false
-    t.string "name"
-    t.string "location"
-    t.string "image_url"
-    t.string "url"
-    t.boolean "admin"
-    t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
-    t.index ["provider"], name: "index_users_on_provider"
-    t.index ["uid"], name: "index_users_on_uid"
+  create_table 'users', force: :cascade do |t|
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'provider', default: 'NO', null: false
+    t.string 'uid', default: 'NO', null: false
+    t.string 'name'
+    t.string 'location'
+    t.string 'image_url'
+    t.string 'url'
+    t.boolean 'admin'
+    t.index %w[provider uid], name: 'index_users_on_provider_and_uid', unique: true
+    t.index ['provider'], name: 'index_users_on_provider'
+    t.index ['uid'], name: 'index_users_on_uid'
   end
-
 end

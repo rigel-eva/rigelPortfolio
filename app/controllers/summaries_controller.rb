@@ -1,6 +1,6 @@
 class SummariesController < ApplicationController
   load_and_authorize_resource
-  before_action :set_summary, only: [:show, :edit, :update, :destroy]
+  before_action :set_summary, only: %i[show edit update destroy]
 
   # GET /summaries
   # GET /summaries.json
@@ -10,8 +10,7 @@ class SummariesController < ApplicationController
 
   # GET /summaries/1
   # GET /summaries/1.json
-  def show
-  end
+  def show; end
 
   # GET /summaries/new
   def new
@@ -19,8 +18,7 @@ class SummariesController < ApplicationController
   end
 
   # GET /summaries/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /summaries
   # POST /summaries.json
@@ -63,13 +61,14 @@ class SummariesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_summary
-      @summary = Summary.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def summary_params
-      params.require(:summary).permit(:summaryText, :enabled)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_summary
+    @summary = Summary.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def summary_params
+    params.require(:summary).permit(:summaryText, :enabled)
+  end
 end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :skill_groups
   resources :skills
   resources :users
-  #get 'github/index'
+  # get 'github/index'
 
   root 'landing_page#welcome'
   get '/wordpress_preview', to: 'wordpress_preview#index'
